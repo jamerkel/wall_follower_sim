@@ -4,7 +4,7 @@ from visualization_msgs.msg import Marker
 class VisualizationTools:
 
     @staticmethod
-    def plot_line(x, y, publisher, color = (1., 0., 0.), frame = "/base_link"):
+    def plot_line(x, y, publisher, color = (0., 0., 0.), frame = "/base_link"):
         """
         Publishes the points (x, y) to publisher
         so they can be visualized in rviz as
@@ -28,8 +28,8 @@ class VisualizationTools:
         line_strip.scale.y = 0.1
         line_strip.color.a = 1.
         line_strip.color.r = color[0]
-        line_strip.color.g = color[1]
-        line_strip.color.g = color[2]
+        line_strip.color.g = color[0]
+        line_strip.color.b = color[0]
 
         # Fill the line with the desired values
         for xi, yi in zip(x, y):
